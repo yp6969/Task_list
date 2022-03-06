@@ -39,15 +39,15 @@
     </EditText>
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/doneRadio"
+        android:id="@+id/progressRadio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <RadioButton android:id="@+id/task_to_perform"
+        <RadioButton android:id="@+id/in_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/task_to_perform"
+            android:text="@string/in_progress"
             android:checked="true"/>
 
         <RadioButton android:id="@+id/tasks_done"
@@ -87,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="@color/yellow"
+        android:backgroundTint="@color/pinkAndWhite"
         android:text="@string/add_task" />
 
 </LinearLayout>

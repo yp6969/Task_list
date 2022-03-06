@@ -117,7 +117,7 @@ public class SearchTasksByDate extends AppCompatActivity implements View.OnClick
             case R.id.search_by_date:
                 startActivity(new Intent(this, SearchTasksByDate.class));
                 return true;
-            case R.id.task_to_perform:
+            case R.id.in_progress:
                 startActivity(new Intent(getApplicationContext(), TaskNotDone.class));
                 return true;
             case R.id.tasks_done:

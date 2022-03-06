@@ -4,12 +4,12 @@
     <string name="add_task">Add Task</string>
     <string name="search_by_date">Search by Date</string>
     <string name="task_done">Done</string>
-    <string name="task_to_perform">In progress</string>
+    <string name="in_progress">In progress</string>
     <string name="btn_update">Update</string>
     <string name="btn_delete">Delete</string>
     <string name="empty_list_text">No tasks to Do</string>
-    <string name="date">Date</string>
-    <string name="enter_task">My Task</string>
+    <string name="date">Choose date</string>
+    <string name="enter_task">Enter a task</string>
     <string name="search_by_check">search by check</string>
     <string name="normal">No pressure</string>
     <string name="urgent">Urgent</string>

@@ -72,7 +72,7 @@ public class TaskDone extends AppCompatActivity implements View.OnClickListener 
             case R.id.search_by_date:
                 startActivity(new Intent(this, SearchTasksByDate.class));
                 return true;
-            case R.id.task_to_perform:
+            case R.id.in_progress:
                 startActivity(new Intent(getApplicationContext(), TaskNotDone.class));
                 return true;
             case R.id.tasks_done:

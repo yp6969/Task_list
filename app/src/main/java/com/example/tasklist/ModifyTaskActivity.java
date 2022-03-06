@@ -22,7 +22,7 @@ public class ModifyTaskActivity extends Activity implements View.OnClickListener
     private Button updateBtn, deleteBtn;
     private DatePickerDialog picker;
     private EditText descText;
-    private RadioGroup doneRadio;
+    private RadioGroup progressRadio;
     private RadioGroup urgencyRadio;
     private long _id;
 
@@ -76,7 +76,7 @@ public class ModifyTaskActivity extends Activity implements View.OnClickListener
         titleText.setText(name);
         descText.setText(desc);
 
-        doneRadio = (RadioGroup) findViewById(R.id.doneRadio);
+        progressRadio = (RadioGroup) findViewById(R.id.progressRadio);
         setDone(done);
 
         urgencyRadio = (RadioGroup) findViewById(R.id.urgencyRadio);
@@ -92,7 +92,7 @@ public class ModifyTaskActivity extends Activity implements View.OnClickListener
             case R.id.btn_update:
                 String title = titleText.getText().toString();
                 String desc = descText.getText().toString();
-                int status = doneRadio.getCheckedRadioButtonId();
+                int status = progressRadio.getCheckedRadioButtonId();
                 RadioButton rb = (RadioButton)findViewById(status);
                 String checked = rb.getText().toString();
 
@@ -125,7 +125,7 @@ public class ModifyTaskActivity extends Activity implements View.OnClickListener
     }
 
     private void setDone(String s){
-        RadioButton rbStart = (RadioButton)findViewById(R.id.task_to_perform);
+        RadioButton rbStart = (RadioButton)findViewById(R.id.in_progress);
         RadioButton rbDone = (RadioButton)findViewById(R.id.tasks_done);
 
         if(s.equals("In progress")){

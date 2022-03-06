@@ -20,12 +20,13 @@ public class AddTaskActivity extends Activity implements View.OnClickListener {
     private Button addTodoBtn;
     private EditText subjectEditText;
     private EditText descEditText;
-    private RadioGroup doneRadio;
+    private RadioGroup progressRadio;
     private RadioGroup urgencyRadio;
     private DatePickerDialog picker;
 
     private DBManager dbManager;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +41,10 @@ public class AddTaskActivity extends Activity implements View.OnClickListener {
         descEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Calendar cldr = Calendar.getInstance();
-                int day = cldr.get(Calendar.DAY_OF_MONTH);
-                int month = cldr.get(Calendar.MONTH);
-                int year = cldr.get(Calendar.YEAR);
-                // date picker dialog
+                final Calendar calender = Calendar.getInstance();
+                int day = calender.get(Calendar.DAY_OF_MONTH);
+                int month = calender.get(Calendar.MONTH);
+                int year = calender.get(Calendar.YEAR);
                 picker = new DatePickerDialog(AddTaskActivity.this,
                         new DatePickerDialog.OnDateSetListener() {
                             @SuppressLint("SetTextI18n")
@@ -57,10 +57,8 @@ public class AddTaskActivity extends Activity implements View.OnClickListener {
             }
         });
 
-        doneRadio = (RadioGroup) findViewById(R.id.doneRadio);
-
+        progressRadio = (RadioGroup) findViewById(R.id.progressRadio);
         urgencyRadio = (RadioGroup) findViewById(R.id.urgencyRadio);
-
         addTodoBtn = (Button) findViewById(R.id.add_task);
 
         dbManager = new DBManager(this);
@@ -74,9 +72,7 @@ public class AddTaskActivity extends Activity implements View.OnClickListener {
             case R.id.add_task:
                 final String name = subjectEditText.getText().toString();
                 final String desc = descEditText.getText().toString();
-                //final String checked = check.getText().toString();
-                //final String urgencyTask = urgencyOfTask.getText().toString();
-                int status = doneRadio.getCheckedRadioButtonId();
+                int status = progressRadio.getCheckedRadioButtonId();
                 RadioButton rb = (RadioButton)findViewById(status);
                 String checked = rb.getText().toString();
                 setDone(checked);
@@ -101,7 +97,7 @@ public class AddTaskActivity extends Activity implements View.OnClickListener {
         }
     }
     private void setDone(String s){
-        RadioButton rbStart = (RadioButton)findViewById(R.id.task_to_perform);
+        RadioButton rbStart = (RadioButton)findViewById(R.id.in_progress);
         RadioButton rbDone = (RadioButton)findViewById(R.id.tasks_done);
 
         if(s.equals("Done")){
