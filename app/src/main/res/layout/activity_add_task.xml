@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/pink"
+    android:background="@drawable/background_task"
     android:padding="20dp" >
 
     <EditText
@@ -75,11 +75,6 @@
             android:layout_height="wrap_content"
             android:text="@string/urgent" />
 
-        <RadioButton
-            android:id="@+id/very_urgent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/very_urgent" />
     </RadioGroup>
 
     <Button

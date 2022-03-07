@@ -3,7 +3,7 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/flower"
+    android:background="@drawable/backgorund"
     android:orientation="vertical">
 
     <ListView
