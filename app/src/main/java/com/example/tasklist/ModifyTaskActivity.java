@@ -141,22 +141,14 @@ public class ModifyTaskActivity extends Activity implements View.OnClickListener
     private void setUrgency(String s){
         RadioButton normal = (RadioButton)findViewById(R.id.normal);
         RadioButton urgent = (RadioButton)findViewById(R.id.urgent);
-        RadioButton very_urgent = (RadioButton)findViewById(R.id.very_urgent);
 
         if(s.equals("Normal")){
             normal.setChecked(true);
             urgent.setChecked(false);
-            very_urgent.setChecked(false);
         }
         else if(s.equals("Urgent")){
             normal.setChecked(false);
             urgent.setChecked(true);
-            very_urgent.setChecked(false);
-        }
-        else{
-            normal.setChecked(false);
-            urgent.setChecked(false);
-            very_urgent.setChecked(true);
         }
     }
 }
