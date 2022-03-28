@@ -56,8 +56,7 @@ public class DBManager {
         contentValues.put(DatabaseHelper.DESC, desc);
         contentValues.put(DatabaseHelper.CHECK, checkBoxChange);
         contentValues.put(DatabaseHelper.URGENT, urgent);
-        int i = database.update(DatabaseHelper.TABLE_NAME, contentValues, DatabaseHelper._ID + " = " + _id, null);
-        return i;
+        return database.update(DatabaseHelper.TABLE_NAME, contentValues, DatabaseHelper._ID + " = " + _id, null);
     }
 
     public Cursor searchTaskDone(){

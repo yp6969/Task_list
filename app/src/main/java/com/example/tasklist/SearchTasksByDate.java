@@ -1,5 +1,6 @@
 package com.example.tasklist;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.tasklist.R;
 
 import java.util.Calendar;
+import java.util.Objects;
 
 public class SearchTasksByDate extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,7 +46,7 @@ public class SearchTasksByDate extends AppCompatActivity implements View.OnClick
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_search_by_date);
-        getSupportActionBar().setTitle("Search Tasks by Date");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Search Tasks by Date");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -63,6 +65,7 @@ public class SearchTasksByDate extends AppCompatActivity implements View.OnClick
                 // date picker dialog
                 picker = new DatePickerDialog(SearchTasksByDate.this,
                         new DatePickerDialog.OnDateSetListener() {
+                            @SuppressLint("SetTextI18n")
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                                 date.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
@@ -77,7 +80,6 @@ public class SearchTasksByDate extends AppCompatActivity implements View.OnClick
             @Override
             public void onClick(View v) {
                 String dateText = date.getText().toString();
-                //System.out.println("222222222222222222222222222222222    " + dateText + "           22222222222");
                 dbManager = new DBManager(SearchTasksByDate.this);
                 dbManager.open();
                 cursor = dbManager.read();
@@ -91,19 +93,13 @@ public class SearchTasksByDate extends AppCompatActivity implements View.OnClick
         });
     }
 
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        if (item.getItemId() == android.R.id.home) {
-//            finish();
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
