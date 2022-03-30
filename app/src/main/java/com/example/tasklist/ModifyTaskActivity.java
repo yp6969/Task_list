@@ -76,7 +76,7 @@ public class ModifyTaskActivity extends Activity implements View.OnClickListener
         titleText.setText(name);
         descText.setText(desc);
 
-        progressRadio = (RadioGroup) findViewById(R.id.progressRadio);
+        progressRadio = (RadioGroup) findViewById(R.id.progressRadio_m);
         setDone(done);
 
         urgencyRadio = (RadioGroup) findViewById(R.id.urgencyRadio);
